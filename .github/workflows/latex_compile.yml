@@ -16,7 +16,7 @@ jobs:
       - name: 'Upload PDF and log as artifact'
         uses: actions/upload-artifact@v4
         with:
-          name: compilations
+          name: compilations_${GITHUB_JOB_NAME}
           path: |
             mwe.pdf
             mwe.log
@@ -32,7 +32,7 @@ jobs:
       - name: 'Upload PDF and log as artifact'
         uses: actions/upload-artifact@v4
         with:
-          name: compilations
+          name: compilations_${GITHUB_JOB_NAME}
           path: |
             mwe.pdf
             mwe.log

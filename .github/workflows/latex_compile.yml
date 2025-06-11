@@ -36,3 +36,22 @@ jobs:
           path: |
             mwe.pdf
             mwe.log
+  buildNew_20250608_updated:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.gitlab.com/islandoftex/images/texlive:TL2025-2025-06-08-full
+    steps:
+      - uses: actions/checkout@v4
+      - name: update texlive
+        run: |
+          tlmgr update --self --all
+      - name: LaTeX compilation
+        run: latexmk -pdf mwe.tex
+
+      - name: 'Upload PDF and log as artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: compilations_buildNew_20250608_updated
+          path: |
+            mwe.pdf
+            mwe.log

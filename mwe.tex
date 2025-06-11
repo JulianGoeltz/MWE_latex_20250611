@@ -1,0 +1,23 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{cleveref}
+
+\begin{document}
+\section{beginning} \label{sec:beginning}
+MWE for latex, we can ref sec~\ref{sec:beginning} and ref fig~\ref{fig:fig1} and fig~\ref{fig:fig2}.
+
+\begin{figure}
+  \centering
+  \caption{\label{fig:fig1}
+      first figure
+  }
+\end{figure}
+\begin{figure}
+  \centering
+  \caption{\label{fig:fig2}
+      second figure
+  }
+\end{figure}
+
+\end{document}
